@@ -1,0 +1,26 @@
+<html>
+<head>
+	<title>Iris Flower Prediction</title>
+</head>
+<body style="background-color:grey;">
+<center>
+	<h1>IRIS FLOWER DETECTION</h1>
+<img src='\static\flower1.jpg' alt="flower"><br><br>
+<div class="container text-center">
+	<form action="/predict" method="POST"><!--/predict uthaya @app.route se from app.py file-->
+		<input type="text" name="spl" placeholder="sepal length"><br><br>
+		<input type="text" name="spw" placeholder="sepal width"><br><br>
+		<input type="text" name="ptl" placeholder="petal length"><br><br>
+		<input type="text" name="ptw" placeholder="petal width"><br><br>
+		<button class='btn btn-success'>Predict</button><!--btn-success due to this button color is green-->
+	</form>
+</div>
+<div class="row">
+	{% if prediction %}
+	<h2 class="text-warning">{{prediction}}</h2>
+	{% endif %}
+</div>
+	
+</center>
+</body>
+</html>
